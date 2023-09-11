@@ -1,20 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from './Components/HeaderComponent/Header';
 import Post from './Components/PostComponent/Post';
+import { db } from './firebase';
+import { collection ,onSnapshot} from 'firebase/firestore';
+import { doc, setDoc } from "firebase/firestore";
+
+
 function App() {
-       const[posts , setposts] = useState([
-        {username: 'cleverQzi',
-         caption: 'wow didnt know this works' ,
-         imageUrl: 'https://cdn-icons-png.flaticon.com/512/5949/5949033.png'},
-        {
-          username:'LazyGirl' ,
-          caption: 'wanted to sleep more ' ,
-          imageUrl:'https://cdn-icons-png.flaticon.com/512/5949/5949033.png'
-        }
-       ]);
+       const[posts , setposts] = useState([]);
+
+        useEffect(()=>{
+           onSnapshot(collection(db, 'posts'),(snapshot)=>{
+            setposts(snapshot.docs.map(doc=>doc.data()));
+           })
+        },[]);
+
+       //useEffect runs a peice of code based on a specific condition ex run code when refreshed
+       // if we leave it empty it will run the code inside useEffect function only once when the app component initiated 
+       // but supposed we gave [posts], it will run verytime there is a change in posts 
+
   return (
     <div className='App'>
   
