@@ -10,8 +10,9 @@ function App() {
       
       
        <Header/>
+       <Post username='cleverQzi' caption='wow didnt know this works' imageUrl='https://cdn-icons-png.flaticon.com/512/5949/5949033.png'/>
        <Post/>
-     
+       <Post/>
       
        </div>
   );
