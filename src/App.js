@@ -11,7 +11,7 @@ import { doc, setDoc } from "firebase/firestore";
 
 function App() {
        const[posts , setposts] = useState([]);
-
+       const [comment, setComment]=useState([]);
         useEffect(()=>{
            onSnapshot(collection(db, 'posts'),(snapshot)=>{
             setposts(snapshot.docs.map(doc=>({
