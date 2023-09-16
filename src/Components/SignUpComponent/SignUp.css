@@ -25,3 +25,10 @@ input{
     padding-bottom: 5px;
     margin-bottom: 5px;
 }
+
+.signUp-button{
+   background-color: black;
+   color: white;
+   padding: 5px 10px 5px 10px;
+   border-radius: 5px;
+}

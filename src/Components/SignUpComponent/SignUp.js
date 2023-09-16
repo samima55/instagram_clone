@@ -14,7 +14,7 @@ import "./SignUp.css";
     }
     return(
         <div>
-        <Button onClick={()=>setOpen(true)}>signUp</Button>
+        <button onClick={()=>setOpen(true)} className="signUp-button">signUp</button>
         <Modal
           open={open}
           onClose={()=>setOpen(false)}
@@ -47,7 +47,7 @@ import "./SignUp.css";
              value={password}
              onChange={(e)=>setPassword(e.target.value)}
              />
-             <Button onClick={signUp}>signUp</Button>
+             <button  onClick={signUp} className='signUp-button'>signUp</button>
             </from>
           </Box>
         </Modal>
