@@ -3,6 +3,7 @@ import React from 'react';
 import "./Header.css";
 import { Button ,Modal, Box, Typography } from '@mui/material';
 import { useState } from 'react';
+import { Input } from '@mui/icons-material';
  export const style = {
     position: 'absolute',
     top: '50%',
@@ -17,6 +18,7 @@ import { useState } from 'react';
   
 const Header = () => {
     const [open, setOpen] =useState(false);
+    const [username, setUsername] =useState();
 
     const signUp=( event)=>{
        
@@ -31,8 +33,7 @@ const Header = () => {
          </div>
 
          <div>
-      <Button onClick={()=>setOpen(true)}>Open modal</Button>
-      <Button onClick={signUp}>Sign Up</Button>
+      <Button onClick={()=>setOpen(true)}>signUp</Button>
       <Modal
         open={open}
         onClose={()=>setOpen(false)}
@@ -40,12 +41,16 @@ const Header = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+        <img className='App_headerImage'
+         src='https://1000logos.net/wp-content/uploads/2017/02/Logo-Instagram.png'
+          alt='logo'
+          />
+          <Input 
+           type="text"
+           placeholder="username"
+           value={username}
+           onChange={(e)=>setUsername(e.target.value)}
+           />
         </Box>
       </Modal>
     </div>
