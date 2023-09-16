@@ -17,6 +17,10 @@ import { useState } from 'react';
   
 const Header = () => {
     const [open, setOpen] =useState(false);
+
+    const signUp=( event)=>{
+       
+    }
     return(
         <>
         <div className='App_header'>
@@ -28,6 +32,7 @@ const Header = () => {
 
          <div>
       <Button onClick={()=>setOpen(true)}>Open modal</Button>
+      <Button onClick={signUp}>Sign Up</Button>
       <Modal
         open={open}
         onClose={()=>setOpen(false)}
