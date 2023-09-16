@@ -1,9 +1,9 @@
 
 import React from 'react';
 import "./Header.css";
-import { Button ,Modal, Box, Typography } from '@mui/material';
+import { Button ,Modal, Box } from '@mui/material';
 import { useState } from 'react';
-import { Input } from '@mui/icons-material';
+
  export const style = {
     position: 'absolute',
     top: '50%',
@@ -15,6 +15,10 @@ import { Input } from '@mui/icons-material';
     boxShadow: 24,
     p: 4,
   };
+
+  export const inputStyle={
+    width: '60%'
+  }
   
 const Header = () => {
     const [open, setOpen] =useState(false);
@@ -47,19 +51,22 @@ const Header = () => {
          src='https://1000logos.net/wp-content/uploads/2017/02/Logo-Instagram.png'
           alt='logo'
           />
-          <Input 
+          <input 
+          
            type="text"
            placeholder="username"
            value={username}
            onChange={(e)=>setUsername(e.target.value)}
            />
-           <Input 
+           <input 
+           
            type="text"
            placeholder="email"
            value={email}
            onChange={(e)=>setEmail(e.target.value)}
            />
-           <Input 
+           <input 
+          
            type="text"
            placeholder="password"
            value={password}
