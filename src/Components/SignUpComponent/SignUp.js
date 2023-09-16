@@ -10,7 +10,7 @@ import "./SignUp.css";
     const [password, setPassword] =useState();
     
     const signUp=( event)=>{
-       
+       event.preventDefault();
     }
     return(
         <div>
@@ -47,7 +47,7 @@ import "./SignUp.css";
              value={password}
              onChange={(e)=>setPassword(e.target.value)}
              />
-             <button  onClick={signUp} className='signUp-button'>signUp</button>
+             <button type='submit'  onClick={signUp} className='signUp-button'>signUp</button>
             </from>
           </Box>
         </Modal>
