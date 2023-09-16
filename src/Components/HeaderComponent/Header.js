@@ -19,7 +19,9 @@ import { Input } from '@mui/icons-material';
 const Header = () => {
     const [open, setOpen] =useState(false);
     const [username, setUsername] =useState();
-
+    const [email, setEmail] =useState();
+    const [password, setPassword] =useState();
+    
     const signUp=( event)=>{
        
     }
@@ -50,6 +52,18 @@ const Header = () => {
            placeholder="username"
            value={username}
            onChange={(e)=>setUsername(e.target.value)}
+           />
+           <Input 
+           type="text"
+           placeholder="email"
+           value={email}
+           onChange={(e)=>setEmail(e.target.value)}
+           />
+           <Input 
+           type="text"
+           placeholder="password"
+           value={password}
+           onChange={(e)=>setPassword(e.target.value)}
            />
         </Box>
       </Modal>
